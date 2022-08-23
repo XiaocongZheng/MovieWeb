@@ -1,0 +1,40 @@
+.slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35rem;
+    color: #999;
+    background-color: black;
+    position: relative;
+}
+.slide {
+    position: relative;
+    display: flex;
+}
+.slide-bg {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: "";
+    background-image: linear-gradient(
+        to right,
+        #000 0,
+        transparent 75%,
+        transparent 100%
+    );
+}
+.slide-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.slide-pane {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
