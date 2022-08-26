@@ -1,30 +1,50 @@
 <div class="slider">
-    <div class="slide">
-        <div class="slide-bg">
-            <img
-                class="slide-img"
-                src="https://image.tmdb.org/t/p/original/AfvIjhDu9p64jKcmohS4hsPG95Q.jpg"
-                alt=""
-            />
-        </div>
-        <div class="slide-pane">
-            <h2 class="name">The Black Phone</h2>
+    <ng-container *ngFor="let item of items; let i = index">
+        <div class="slide" *ngIf="i == currentSlideIndex" @slideFade>
+            <div class="slide-bg">
+                <img
+                    class="slide-img"
+                    [src]="
+                        'https://image.tmdb.org/t/p/original/' +
+                        item.backdrop_path
+                    "
+                    alt=""
+                />
+            </div>
+            <div class="slide-pane">
+                <h2 class="slide-pane-name">{{ item.title }}</h2>
 
-            <div class="meta">
-                <div class="info">
-                    <span class="rating">
-                        <span>Star</span><span class="rating-value">7.5</span
-                        ><span>/10</span>
-                    </span>
-                    <span>463 Reviews</span>
-                    <span>2021</span>
+                <div class="slide-pane-meta">
+                    <div class="slide-pane-info">
+                        <span
+                            class="slide-pane-rating"
+                            style="
+                                content: '|';
+                                margin-right: 9px;
+                                margin-left: 9px;
+                            "
+                        >
+                            <span class="app-icon">star</span
+                            ><span class="slide-pane-rating-value">{{
+                                item.vote_average
+                            }}</span
+                            ><span>/10</span>
+                        </span>
+                        <span
+                            style="
+                                content: '|';
+                                margin-right: 9px;
+                                margin-left: 9px;
+                            "
+                            >{{ item.vote_count }}</span
+                        >
+                        <span>{{ item.release_date | date: "yyyy" }}</span>
+                    </div>
+                </div>
+                <div class="slide-pane-desc mt-6">
+                    {{ item.overview }}
                 </div>
             </div>
-            <div class="desc">
-                Finney Blake, a shy but clever 13-year-old boy, is abducted by a
-                sadistic killer and trapped in a soundproof basement where
-                screaming is of little use.
-            </div>
         </div>
-    </div>
+    </ng-container>
 </div>
