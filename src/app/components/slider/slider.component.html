@@ -4,10 +4,7 @@
             <div class="slide-bg">
                 <img
                     class="slide-img"
-                    [src]="
-                        'https://image.tmdb.org/t/p/original/' +
-                        item.backdrop_path
-                    "
+                    [src]="imageSizes.large + item.backdrop_path"
                     alt=""
                 />
             </div>

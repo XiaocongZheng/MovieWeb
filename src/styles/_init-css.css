@@ -372,3 +372,8 @@ template {
 [hidden] {
     display: none;
 }
+
+.container {
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
