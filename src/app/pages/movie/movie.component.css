@@ -25,3 +25,17 @@
 .stat-value {
     color: #ffd54f;
 }
+
+.actor {
+    padding: 10px;
+}
+
+.actor-img {
+    width: 100%;
+}
+
+.actor-span {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
