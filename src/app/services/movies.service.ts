@@ -6,6 +6,7 @@ import {
     MovieImages,
     MovieVideoDto,
 } from "../models/movie";
+import { GenresDto } from "../models/genre";
 import { Movie } from "../models/movie";
 import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
@@ -41,6 +42,30 @@ export class MoviesService {
         return this.http
             .get<MovieVideoDto>(
                 `${this.baseUrl}/movie/${id}/videos?api_key=${this.apiKey}`
+            )
+            .pipe(
+                switchMap((res) => {
+                    return of(res.results);
+                })
+            );
+    }
+
+    getMovieGenres() {
+        return this.http
+            .get<GenresDto>(
+                `${this.baseUrl}/genre/movie/list?api_key=${this.apiKey}`
+            )
+            .pipe(
+                switchMap((res) => {
+                    return of(res.genres);
+                })
+            );
+    }
+
+    getMoviesByGenre(genreId: string, page: number) {
+        return this.http
+            .get<MovieDto>(
+                `${this.baseUrl}/discover/movie?with_genres=${genreId}&page=${page}&api_key=${this.apiKey}`
             )
             .pipe(
                 switchMap((res) => {
