@@ -1,0 +1,36 @@
+.movie-item {
+    position: relative;
+    display: block;
+    min-height: 325px;
+    border-radius: 5px;
+    background-color: black;
+    border: 1px solid lightgrey;
+}
+
+.movie-item-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+.movie-item-image > img {
+    width: 100%;
+    border-radius: 5px;
+    height: 275px;
+    object-fit: cover;
+}
+.movie-item-rating {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.app-icon {
+    color: yellow;
+    margin-right: 5px;
+}

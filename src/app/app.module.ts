@@ -20,6 +20,8 @@ import { ImageModule } from "primeng/image";
 import { InputText, InputTextModule } from "primeng/inputtext";
 import { CarouselModule } from "primeng/carousel";
 import { GenresComponent } from "./pages/genres/genres.component";
+import { TVshowsComponent } from './pages/tvshows/tvshows.component';
+import { TVitemComponent } from './components/tvitem/tvitem.component';
 
 @NgModule({
     declarations: [
@@ -34,6 +36,8 @@ import { GenresComponent } from "./pages/genres/genres.component";
         MovieComponent,
         VideoEmbedComponent,
         GenresComponent,
+        TVshowsComponent,
+        TVitemComponent,
     ],
     imports: [
         BrowserModule,
