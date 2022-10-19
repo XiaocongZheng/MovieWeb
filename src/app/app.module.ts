@@ -17,8 +17,9 @@ import { TabViewModule } from "primeng/tabview";
 import { MovieComponent } from "./pages/movie/movie.component";
 import { VideoEmbedComponent } from "./components/video-embed/video-embed.component";
 import { ImageModule } from "primeng/image";
+import { InputText, InputTextModule } from "primeng/inputtext";
 import { CarouselModule } from "primeng/carousel";
-import { GenresComponent } from './pages/genres/genres.component';
+import { GenresComponent } from "./pages/genres/genres.component";
 
 @NgModule({
     declarations: [
@@ -42,6 +43,7 @@ import { GenresComponent } from './pages/genres/genres.component';
         PaginatorModule,
         TabViewModule,
         ImageModule,
+        InputTextModule,
         CarouselModule,
     ],
     providers: [],
